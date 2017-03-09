@@ -34,6 +34,17 @@ public class TranslateModel {
 		link.getNode().add(((java.net.Inet4Address)e.getSource()).getHostAddress());
 		link.getNode().add(((java.net.Inet4Address)e.getTarget()).getHostAddress());
 		
+		
+		String srcEdge = ((java.net.Inet4Address)e.getSource()).getHostAddress() + "/" + Long.toString(e.getSrc_if_id()).toString();
+		link.getNodeEdgePoint().add(srcEdge);
+		
+		String dstEdge = ((java.net.Inet4Address)e.getTarget()).getHostAddress() + "/" + Long.toString(e.getDst_if_id()).toString();
+		link.getNodeEdgePoint().add(dstEdge);
+	
+		
+		System.out.println("Print link = " +link.toString());
+		
+		
 //		  Object src = e.getSrc_Numif_id();
 //		  if( e.getSource() instanceof  java.net.Inet4Address){
 //			  Node node = TranslateModel.getNodeById( db, ((java.net.Inet4Address)e.getSource()).getHostAddress());
@@ -123,10 +134,12 @@ public class TranslateModel {
 	public static Node translateNodeIp(DomainTEDB ted, Inet4Address n, Node_Info nodeInfo) {
 		Node node = new Node();
 		
+		NodeEdgePoint e = new NodeEdgePoint();
 		System.out.println("DEBUG translateNodeIP, nodeInfo (of node "+n+"):"+nodeInfo);
-		NodeEdgePoint e= new NodeEdgePoint();
 
 		node.getOwnedNodeEdgePoint().add(e);
+
+		System.out.println(node.getAggregatedNodeEdgePoint());
 		//e.
 		//owned-node-edge-point
 		
