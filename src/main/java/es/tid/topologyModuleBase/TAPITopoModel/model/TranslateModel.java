@@ -19,11 +19,11 @@ import java.util.Map;
 
 public class TranslateModel {
 	
-	// Variable for testing
+	// Variables for testing
 	private static boolean printingLink = true;
 	private static boolean printingNode = true;
 	
-	// Hashtable of key:value ->	 nodeIP:nodeUUID
+	// Hashtable of key:value -> nodeIP:nodeUUID
 	private static Hashtable<String,String> nodes_uuid = new Hashtable<String,String>();
 	// Hashtable of key:value -> nodeIP/portNumber:portUUID
 	private static Hashtable<String,String> ports_uuid = new Hashtable<String,String>();
@@ -36,7 +36,8 @@ public class TranslateModel {
 
 		System.out.println("TopoUUID = " +topId);
 		
-		// If there is no UUID, create one or take it from attributes??
+		// If there is no UUID, create one or take it from attributes?? If "generate" is chosen, review "get/set EncapTopology"
+		// calls in method "translateNodeIp". 
 		if (topo.getUuid() == null) {
 //			topo.setUuid(UUID_generate());	// generate one
 			topo.setUuid(topId);			// take id from attributes
@@ -138,7 +139,7 @@ public class TranslateModel {
 		}
 		
 		
-		// FOR TESTING (PRINTING IN MAIN CONSOLE)
+		// FOR TESTING (PRINTING A LINK IN MAIN CONSOLE)
 		if (printingLink) {
 //			System.out.println("Direction = " + link.getDirection());
 //			System.out.println("EDGE = " + link.getNodeEdgePoint());
@@ -258,7 +259,7 @@ public class TranslateModel {
 		// Add nodeIP/port as name for each port (owned-node-edge-point)
 		for(Map.Entry entry: nodes_ports.entrySet()) {
 			NodeEdgePoint e = new NodeEdgePoint();
-			// For naming nodes and node-edge-points
+			// For naming node-edge-points
 			NameAndValue nameNE = new NameAndValue();
 			
 			String nodeIP = ((NodeAndEdges)entry.getKey()).getNodeIP();
@@ -307,9 +308,9 @@ public class TranslateModel {
 		node.getAggregatedNodeEdgePoint();
 		
 		node.getEncapTopology();
-//		String topoUUID = Topology.getUuid();
 		if (node.getEncapTopology() == null) {
 			node.setEncapTopology(ted.getDomainID().getHostAddress());
+//			Topology getUuid() --> non-static method... think about how to do it
 		}
 		
 		node.getState();
@@ -328,11 +329,11 @@ public class TranslateModel {
         node.getTransferTiming();
         node.getLayerProtocolName();
 		
-        // FOR TESTING (PRINTING IN MAIN CONSOLE)
+        // FOR TESTING (PRINTING A NODE IN MAIN CONSOLE)
 		if (printingNode) {
 //			System.out.println("NODE = " +node.toString());
-			printingNode = false;
 //			System.out.println("-----END OF NODE-----");
+			printingNode = false;
 		}
 		
 //		node.setName(n.getHostAddress());
