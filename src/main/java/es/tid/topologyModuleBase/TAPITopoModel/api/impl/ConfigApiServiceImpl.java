@@ -5,13 +5,36 @@ import es.tid.tedb.TEDB;
 import es.tid.topologyModuleBase.TAPITopoModel.api.*;
 import es.tid.topologyModuleBase.TAPITopoModel.model.*;
 
+import es.tid.topologyModuleBase.TAPITopoModel.model.AdminStatePac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.Capacity;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ContextSchema;
+import es.tid.topologyModuleBase.TAPITopoModel.model.CostCharacteristic;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LatencyCharacteristic;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocol;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocolTransitionPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LifecycleStatePac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.Link;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NameAndValue;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NetworkTopologyService;
+import es.tid.topologyModuleBase.TAPITopoModel.model.Node;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NodeEdgePoint;
+import es.tid.topologyModuleBase.TAPITopoModel.model.RiskCharacteristic;
+import es.tid.topologyModuleBase.TAPITopoModel.model.RiskParameterPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ServiceInterfacePoint;
+import es.tid.topologyModuleBase.TAPITopoModel.model.Topology;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCapacityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCostPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferIntegrityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferTimingPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationMechanism;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationPac;
+
 import java.util.List;
 import java.util.Map;
-
-import es.tid.topologyModuleBase.TAPITopoModel.api.NotFoundException;
 import es.tid.topologyModuleBase.database.TopologiesDataBase;
 import es.tid.topologyModuleBase.plugins.writer.TopologyServerCOP;
 import es.tid.topologyModuleBase.plugins.writer.TopologyServerTAPI;
+import es.tid.topologyModuleBase.TAPITopoModel.api.NotFoundException;
 
 import java.io.InputStream;
 
@@ -19,8 +42,8 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-02-10T14:31:20.668+01:00")
+import javax.validation.constraints.*;
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-03-31T10:56:12.255Z")
 public class ConfigApiServiceImpl extends ConfigApiService {
     @Override
     public Response createContextById(ContextSchema context, SecurityContext securityContext) throws NotFoundException {
@@ -103,57 +126,57 @@ public class ConfigApiServiceImpl extends ConfigApiService {
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointLabelLabel(String uuid, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointLabelLabel(String uuid, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointLabelLabelById(String uuid, String valueName, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointLabelLabelById(String uuid, String valueName, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointLayerProtocolLayerProtocol(String uuid, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocol(String uuid, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointLayerProtocolLayerProtocolById(String uuid, String localId, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocolById(String uuid, String localId, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointLayerProtocolNameName(String uuid, String localId, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointLayerProtocolNameName(String uuid, String localId, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointLayerProtocolNameNameById(String uuid, String localId, String valueName, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointLayerProtocolNameNameById(String uuid, String localId, String valueName, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointNameName(String uuid, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointNameName(String uuid, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointNameNameById(String uuid, String valueName, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointNameNameById(String uuid, String valueName, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointServiceEndPoint(SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointServiceInterfacePoint(SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointServiceEndPointById(String uuid, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointServiceInterfacePointById(String uuid, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response retrieveContextServiceEndPointStateState(String uuid, SecurityContext securityContext) throws NotFoundException {
+    public Response retrieveContextServiceInterfacePointStateState(String uuid, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
@@ -459,7 +482,7 @@ public class ConfigApiServiceImpl extends ConfigApiService {
     }
     @Override
     public Response retrieveContextTopologyTopology(SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
+    	// do some magic!
     	//XX
     	System.out.println("por aqui");
     	 TopologiesDataBase ted = TopologyServerTAPI.getActualTed();

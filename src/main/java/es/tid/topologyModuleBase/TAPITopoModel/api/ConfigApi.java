@@ -7,29 +7,29 @@ import es.tid.topologyModuleBase.TAPITopoModel.api.factories.ConfigApiServiceFac
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
-import es.tid.topologyModuleBase.TAPITopoModel.model.ContextSchema;
-import es.tid.topologyModuleBase.TAPITopoModel.model.NameAndValue;
-import es.tid.topologyModuleBase.TAPITopoModel.model.NetworkTopologyService;
-import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocol;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ServiceEndPoint;
-import es.tid.topologyModuleBase.TAPITopoModel.model.LifecycleStatePac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.Link;
-import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocolTransitionPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.RiskCharacteristic;
-import es.tid.topologyModuleBase.TAPITopoModel.model.RiskParameterPac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.AdminStatePac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.Capacity;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCapacityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ContextSchema;
 import es.tid.topologyModuleBase.TAPITopoModel.model.CostCharacteristic;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCostPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferIntegrityPac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.LatencyCharacteristic;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferTimingPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationMechanism;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocol;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocolTransitionPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LifecycleStatePac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.Link;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NameAndValue;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NetworkTopologyService;
 import es.tid.topologyModuleBase.TAPITopoModel.model.Node;
 import es.tid.topologyModuleBase.TAPITopoModel.model.NodeEdgePoint;
+import es.tid.topologyModuleBase.TAPITopoModel.model.RiskCharacteristic;
+import es.tid.topologyModuleBase.TAPITopoModel.model.RiskParameterPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ServiceInterfacePoint;
 import es.tid.topologyModuleBase.TAPITopoModel.model.Topology;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCapacityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCostPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferIntegrityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferTimingPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationMechanism;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationPac;
 
 import java.util.List;
 import es.tid.topologyModuleBase.TAPITopoModel.api.NotFoundException;
@@ -43,12 +43,13 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
+import javax.validation.constraints.*;
 
 @Path("/config")
 
 
 @io.swagger.annotations.Api(description = "the config API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-02-10T14:31:20.668+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-03-31T10:56:12.255Z")
 public class ConfigApi  {
    private final ConfigApiService delegate = ConfigApiServiceFactory.getConfigApi();
 
@@ -272,7 +273,7 @@ public class ConfigApi  {
         return delegate.retrieveContextNwTopologyServiceNwTopologyService(securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/label/")
+    @Path("/context/service-interface-point/{uuid}/label/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
@@ -280,13 +281,13 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
-    public Response retrieveContextServiceEndPointLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointLabelLabel(uuid,securityContext);
+        return delegate.retrieveContextServiceInterfacePointLabelLabel(uuid,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/label/{value-name}/")
+    @Path("/context/service-interface-point/{uuid}/label/{value-name}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
@@ -294,14 +295,14 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
-    public Response retrieveContextServiceEndPointLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointLabelLabelById(uuid,valueName,securityContext);
+        return delegate.retrieveContextServiceInterfacePointLabelLabelById(uuid,valueName,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/layer-protocol/")
+    @Path("/context/service-interface-point/{uuid}/layer-protocol/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve layer-protocol", notes = "Retrieve operation of resource: layer-protocol", response = String.class, responseContainer = "List", tags={  })
@@ -309,13 +310,13 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
-    public Response retrieveContextServiceEndPointLayerProtocolLayerProtocol(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocol(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointLayerProtocolLayerProtocol(uuid,securityContext);
+        return delegate.retrieveContextServiceInterfacePointLayerProtocolLayerProtocol(uuid,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/layer-protocol/{local-id}/")
+    @Path("/context/service-interface-point/{uuid}/layer-protocol/{local-id}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve layer-protocol by ID", notes = "Retrieve operation of resource: layer-protocol", response = LayerProtocol.class, tags={  })
@@ -323,14 +324,14 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LayerProtocol.class),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LayerProtocol.class) })
-    public Response retrieveContextServiceEndPointLayerProtocolLayerProtocolById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocolById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of local-id",required=true) @PathParam("local-id") String localId
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointLayerProtocolLayerProtocolById(uuid,localId,securityContext);
+        return delegate.retrieveContextServiceInterfacePointLayerProtocolLayerProtocolById(uuid,localId,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/layer-protocol/{local-id}/name/")
+    @Path("/context/service-interface-point/{uuid}/layer-protocol/{local-id}/name/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
@@ -338,14 +339,14 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
-    public Response retrieveContextServiceEndPointLayerProtocolNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointLayerProtocolNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of local-id",required=true) @PathParam("local-id") String localId
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointLayerProtocolNameName(uuid,localId,securityContext);
+        return delegate.retrieveContextServiceInterfacePointLayerProtocolNameName(uuid,localId,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/layer-protocol/{local-id}/name/{value-name}/")
+    @Path("/context/service-interface-point/{uuid}/layer-protocol/{local-id}/name/{value-name}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
@@ -353,15 +354,15 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
-    public Response retrieveContextServiceEndPointLayerProtocolNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointLayerProtocolNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of local-id",required=true) @PathParam("local-id") String localId
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointLayerProtocolNameNameById(uuid,localId,valueName,securityContext);
+        return delegate.retrieveContextServiceInterfacePointLayerProtocolNameNameById(uuid,localId,valueName,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/name/")
+    @Path("/context/service-interface-point/{uuid}/name/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
@@ -369,13 +370,13 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
-    public Response retrieveContextServiceEndPointNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointNameName(uuid,securityContext);
+        return delegate.retrieveContextServiceInterfacePointNameName(uuid,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/name/{value-name}/")
+    @Path("/context/service-interface-point/{uuid}/name/{value-name}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
@@ -383,41 +384,41 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
-    public Response retrieveContextServiceEndPointNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointNameNameById(uuid,valueName,securityContext);
+        return delegate.retrieveContextServiceInterfacePointNameNameById(uuid,valueName,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/")
+    @Path("/context/service-interface-point/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Retrieve service-end-point", notes = "Retrieve operation of resource: service-end-point", response = String.class, responseContainer = "List", tags={  })
+    @io.swagger.annotations.ApiOperation(value = "Retrieve service-interface-point", notes = "Retrieve operation of resource: service-interface-point", response = String.class, responseContainer = "List", tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
-    public Response retrieveContextServiceEndPointServiceEndPoint(@Context SecurityContext securityContext)
+    public Response retrieveContextServiceInterfacePointServiceInterfacePoint(@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointServiceEndPoint(securityContext);
+        return delegate.retrieveContextServiceInterfacePointServiceInterfacePoint(securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/")
+    @Path("/context/service-interface-point/{uuid}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Retrieve service-end-point by ID", notes = "Retrieve operation of resource: service-end-point", response = ServiceEndPoint.class, tags={  })
+    @io.swagger.annotations.ApiOperation(value = "Retrieve service-interface-point by ID", notes = "Retrieve operation of resource: service-interface-point", response = ServiceInterfacePoint.class, tags={  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = ServiceEndPoint.class),
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = ServiceInterfacePoint.class),
         
-        @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ServiceEndPoint.class) })
-    public Response retrieveContextServiceEndPointServiceEndPointById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+        @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ServiceInterfacePoint.class) })
+    public Response retrieveContextServiceInterfacePointServiceInterfacePointById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointServiceEndPointById(uuid,securityContext);
+        return delegate.retrieveContextServiceInterfacePointServiceInterfacePointById(uuid,securityContext);
     }
     @GET
-    @Path("/context/service-end-point/{uuid}/state/")
+    @Path("/context/service-interface-point/{uuid}/state/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve state", notes = "Retrieve operation of resource: state", response = LifecycleStatePac.class, tags={  })
@@ -425,10 +426,10 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LifecycleStatePac.class),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LifecycleStatePac.class) })
-    public Response retrieveContextServiceEndPointStateState(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
+    public Response retrieveContextServiceInterfacePointStateState(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.retrieveContextServiceEndPointStateState(uuid,securityContext);
+        return delegate.retrieveContextServiceInterfacePointStateState(uuid,securityContext);
     }
     @GET
     @Path("/context/topology/{uuid}/label/")
@@ -718,7 +719,7 @@ public class ConfigApi  {
         return delegate.retrieveContextTopologyLinkTransferCostCostCharacteristicCostCharacteristic(uuid,linkUuid,securityContext);
     }
     @GET
-    @Path("/context/topology/{uuid}/link/{link_uuid}/transfer-cost/cost-characteristic/{cost-name-cost-value-cost-algorithm}/")
+    @Path("/context/topology/{uuid}/link/{link_uuid}/transfer-cost/cost-characteristic/{cost-name_cost-value_cost-algorithm}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve cost-characteristic by ID", notes = "Retrieve operation of resource: cost-characteristic", response = CostCharacteristic.class, tags={  })
@@ -728,7 +729,7 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = CostCharacteristic.class) })
     public Response retrieveContextTopologyLinkTransferCostCostCharacteristicCostCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
-,@ApiParam(value = "ID of cost-name cost-value cost-algorithm",required=true) @PathParam("cost-name-cost-value-cost-algorithm") String costNameCostValueCostAlgorithm
+,@ApiParam(value = "ID of cost-name cost-value cost-algorithm",required=true) @PathParam("cost-name cost-value cost-algorithm") String costNameCostValueCostAlgorithm
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.retrieveContextTopologyLinkTransferCostCostCharacteristicCostCharacteristicById(uuid,linkUuid,costNameCostValueCostAlgorithm,securityContext);
@@ -779,7 +780,7 @@ public class ConfigApi  {
         return delegate.retrieveContextTopologyLinkTransferTimingLatencyCharacteristicLatencyCharacteristic(uuid,linkUuid,securityContext);
     }
     @GET
-    @Path("/context/topology/{uuid}/link/{link_uuid}/transfer-timing/latency-characteristic/{traffic-property-name-traffic-property-queing-latency}/")
+    @Path("/context/topology/{uuid}/link/{link_uuid}/transfer-timing/latency-characteristic/{traffic-property-name_traffic-property-queing-latency}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve latency-characteristic by ID", notes = "Retrieve operation of resource: latency-characteristic", response = LatencyCharacteristic.class, tags={  })
@@ -789,7 +790,7 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LatencyCharacteristic.class) })
     public Response retrieveContextTopologyLinkTransferTimingLatencyCharacteristicLatencyCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
-,@ApiParam(value = "ID of traffic-property-name traffic-property-queing-latency",required=true) @PathParam("traffic-property-name-traffic-property-queing-latency") String trafficPropertyNameTrafficPropertyQueingLatency
+,@ApiParam(value = "ID of traffic-property-name traffic-property-queing-latency",required=true) @PathParam("traffic-property-name traffic-property-queing-latency") String trafficPropertyNameTrafficPropertyQueingLatency
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.retrieveContextTopologyLinkTransferTimingLatencyCharacteristicLatencyCharacteristicById(uuid,linkUuid,trafficPropertyNameTrafficPropertyQueingLatency,securityContext);
@@ -840,7 +841,7 @@ public class ConfigApi  {
         return delegate.retrieveContextTopologyLinkValidationValidationMechanismValidationMechanism(uuid,linkUuid,securityContext);
     }
     @GET
-    @Path("/context/topology/{uuid}/link/{link_uuid}/validation/validation-mechanism/{validation-mechanism-layer-protocol-adjacency-validated-validation-robustness}/")
+    @Path("/context/topology/{uuid}/link/{link_uuid}/validation/validation-mechanism/{validation-mechanism_layer-protocol-adjacency-validated_validation-robustness}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve validation-mechanism by ID", notes = "Retrieve operation of resource: validation-mechanism", response = ValidationMechanism.class, tags={  })
@@ -850,7 +851,7 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ValidationMechanism.class) })
     public Response retrieveContextTopologyLinkValidationValidationMechanismValidationMechanismById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
-,@ApiParam(value = "ID of validation-mechanism layer-protocol-adjacency-validated validation-robustness",required=true) @PathParam("validation-mechanism-layer-protocol-adjacency-validated-validation-robustness") String validationMechanismLayerProtocolAdjacencyValidatedValidationRobustness
+,@ApiParam(value = "ID of validation-mechanism layer-protocol-adjacency-validated validation-robustness",required=true) @PathParam("validation-mechanism layer-protocol-adjacency-validated validation-robustness") String validationMechanismLayerProtocolAdjacencyValidatedValidationRobustness
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.retrieveContextTopologyLinkValidationValidationMechanismValidationMechanismById(uuid,linkUuid,validationMechanismLayerProtocolAdjacencyValidatedValidationRobustness,securityContext);
@@ -1263,7 +1264,7 @@ public class ConfigApi  {
         return delegate.retrieveContextTopologyNodeTransferCostCostCharacteristicCostCharacteristic(uuid,nodeUuid,securityContext);
     }
     @GET
-    @Path("/context/topology/{uuid}/node/{node_uuid}/transfer-cost/cost-characteristic/{cost-name-cost-value-cost-algorithm}/")
+    @Path("/context/topology/{uuid}/node/{node_uuid}/transfer-cost/cost-characteristic/{cost-name_cost-value_cost-algorithm}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve cost-characteristic by ID", notes = "Retrieve operation of resource: cost-characteristic", response = CostCharacteristic.class, tags={  })
@@ -1273,7 +1274,7 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = CostCharacteristic.class) })
     public Response retrieveContextTopologyNodeTransferCostCostCharacteristicCostCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
-,@ApiParam(value = "ID of cost-name cost-value cost-algorithm",required=true) @PathParam("cost-name-cost-value-cost-algorithm") String costNameCostValueCostAlgorithm
+,@ApiParam(value = "ID of cost-name cost-value cost-algorithm",required=true) @PathParam("cost-name cost-value cost-algorithm") String costNameCostValueCostAlgorithm
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.retrieveContextTopologyNodeTransferCostCostCharacteristicCostCharacteristicById(uuid,nodeUuid,costNameCostValueCostAlgorithm,securityContext);
@@ -1324,7 +1325,7 @@ public class ConfigApi  {
         return delegate.retrieveContextTopologyNodeTransferTimingLatencyCharacteristicLatencyCharacteristic(uuid,nodeUuid,securityContext);
     }
     @GET
-    @Path("/context/topology/{uuid}/node/{node_uuid}/transfer-timing/latency-characteristic/{traffic-property-name-traffic-property-queing-latency}/")
+    @Path("/context/topology/{uuid}/node/{node_uuid}/transfer-timing/latency-characteristic/{traffic-property-name_traffic-property-queing-latency}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve latency-characteristic by ID", notes = "Retrieve operation of resource: latency-characteristic", response = LatencyCharacteristic.class, tags={  })
@@ -1334,7 +1335,7 @@ public class ConfigApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LatencyCharacteristic.class) })
     public Response retrieveContextTopologyNodeTransferTimingLatencyCharacteristicLatencyCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
-,@ApiParam(value = "ID of traffic-property-name-traffic-property-queing-latency",required=true) @PathParam("traffic-property-name-traffic-property-queing-latency") String trafficPropertyNameTrafficPropertyQueingLatency
+,@ApiParam(value = "ID of traffic-property-name traffic-property-queing-latency",required=true) @PathParam("traffic-property-name traffic-property-queing-latency") String trafficPropertyNameTrafficPropertyQueingLatency
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.retrieveContextTopologyNodeTransferTimingLatencyCharacteristicLatencyCharacteristicById(uuid,nodeUuid,trafficPropertyNameTrafficPropertyQueingLatency,securityContext);

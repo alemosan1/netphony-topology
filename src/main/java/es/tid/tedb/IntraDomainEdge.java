@@ -83,11 +83,26 @@ public class IntraDomainEdge extends DefaultWeightedEdge {
 	private int dst_sid;
 
 	private String linkID=null;
+	
+	
+	/**
+	 * UUID from Tapi Model
+	 */
+	private String uuid=null;
+	
 	private boolean isDirectional;
 	private String type=null;
 	private double temetric;
 
 	private Bandwidth bw=null;
+	
+	public String getUuid() {
+		return uuid;
+	}
+	
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
 	public String getLinkID() {
 		return linkID;

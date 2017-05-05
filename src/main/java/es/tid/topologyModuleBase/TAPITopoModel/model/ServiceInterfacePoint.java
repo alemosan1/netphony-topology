@@ -16,11 +16,11 @@ package es.tid.topologyModuleBase.TAPITopoModel.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import es.tid.topologyModuleBase.TAPITopoModel.model.Context;
+import com.fasterxml.jackson.annotation.JsonValue;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocol;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LifecycleStatePac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.NameAndValue;
-import es.tid.topologyModuleBase.TAPITopoModel.model.NetworkTopologyService;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ServiceInterfacePoint;
-import es.tid.topologyModuleBase.TAPITopoModel.model.Topology;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ResourceSpec;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,10 +28,11 @@ import java.util.List;
 import javax.validation.constraints.*;
 
 /**
- * ContextSchema
+ * The LogicalTerminationPoint (LTP) object class encapsulates the termination and adaptation functions of one or more transport layers.  The structure of LTP supports all transport protocols including circuit and packet forms.
  */
+@ApiModel(description = "The LogicalTerminationPoint (LTP) object class encapsulates the termination and adaptation functions of one or more transport layers.  The structure of LTP supports all transport protocols including circuit and packet forms.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-03-31T10:56:12.255Z")
-public class ContextSchema   {
+public class ServiceInterfacePoint   {
   @JsonProperty("label")
   private List<NameAndValue> label = new ArrayList<NameAndValue>();
 
@@ -41,21 +42,56 @@ public class ContextSchema   {
   @JsonProperty("name")
   private List<NameAndValue> name = new ArrayList<NameAndValue>();
 
-  @JsonProperty("service-interface-point")
-  private List<ServiceInterfacePoint> serviceInterfacePoint = new ArrayList<ServiceInterfacePoint>();
+  @JsonProperty("layer-protocol")
+  private List<LayerProtocol> layerProtocol = new ArrayList<LayerProtocol>();
 
-  @JsonProperty("nw-topology-service")
-  private NetworkTopologyService nwTopologyService = null;
+  /**
+   * Gets or Sets direction
+   */
+  public enum DirectionEnum {
+    BIDIRECTIONAL("bidirectional"),
+    
+    SINK("sink"),
+    
+    SOURCE("source"),
+    
+    UNDEFINED_OR_UNKNOWN("undefined-or-unknown");
 
-  @JsonProperty("topology")
-  private List<Topology> topology = new ArrayList<Topology>();
+    private String value;
 
-  public ContextSchema label(List<NameAndValue> label) {
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static DirectionEnum fromValue(String text) {
+      for (DirectionEnum b : DirectionEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("direction")
+  private DirectionEnum direction = null;
+
+  @JsonProperty("state")
+  private LifecycleStatePac state = null;
+
+  public ServiceInterfacePoint label(List<NameAndValue> label) {
     this.label = label;
     return this;
   }
 
-  public ContextSchema addLabelItem(NameAndValue labelItem) {
+  public ServiceInterfacePoint addLabelItem(NameAndValue labelItem) {
     this.label.add(labelItem);
     return this;
   }
@@ -74,7 +110,7 @@ public class ContextSchema   {
     this.label = label;
   }
 
-  public ContextSchema uuid(String uuid) {
+  public ServiceInterfacePoint uuid(String uuid) {
     this.uuid = uuid;
     return this;
   }
@@ -93,12 +129,12 @@ public class ContextSchema   {
     this.uuid = uuid;
   }
 
-  public ContextSchema name(List<NameAndValue> name) {
+  public ServiceInterfacePoint name(List<NameAndValue> name) {
     this.name = name;
     return this;
   }
 
-  public ContextSchema addNameItem(NameAndValue nameItem) {
+  public ServiceInterfacePoint addNameItem(NameAndValue nameItem) {
     this.name.add(nameItem);
     return this;
   }
@@ -117,71 +153,66 @@ public class ContextSchema   {
     this.name = name;
   }
 
-  public ContextSchema serviceInterfacePoint(List<ServiceInterfacePoint> serviceInterfacePoint) {
-    this.serviceInterfacePoint = serviceInterfacePoint;
+  public ServiceInterfacePoint layerProtocol(List<LayerProtocol> layerProtocol) {
+    this.layerProtocol = layerProtocol;
     return this;
   }
 
-  public ContextSchema addServiceInterfacePointItem(ServiceInterfacePoint serviceInterfacePointItem) {
-    this.serviceInterfacePoint.add(serviceInterfacePointItem);
-    return this;
-  }
-
-   /**
-   * Get serviceInterfacePoint
-   * @return serviceInterfacePoint
-  **/
-  @JsonProperty("service-interface-point")
-  @ApiModelProperty(value = "")
-  public List<ServiceInterfacePoint> getServiceInterfacePoint() {
-    return serviceInterfacePoint;
-  }
-
-  public void setServiceInterfacePoint(List<ServiceInterfacePoint> serviceInterfacePoint) {
-    this.serviceInterfacePoint = serviceInterfacePoint;
-  }
-
-  public ContextSchema nwTopologyService(NetworkTopologyService nwTopologyService) {
-    this.nwTopologyService = nwTopologyService;
+  public ServiceInterfacePoint addLayerProtocolItem(LayerProtocol layerProtocolItem) {
+    this.layerProtocol.add(layerProtocolItem);
     return this;
   }
 
    /**
-   * Get nwTopologyService
-   * @return nwTopologyService
+   * Get layerProtocol
+   * @return layerProtocol
   **/
-  @JsonProperty("nw-topology-service")
+  @JsonProperty("layer-protocol")
   @ApiModelProperty(value = "")
-  public NetworkTopologyService getNwTopologyService() {
-    return nwTopologyService;
+  public List<LayerProtocol> getLayerProtocol() {
+    return layerProtocol;
   }
 
-  public void setNwTopologyService(NetworkTopologyService nwTopologyService) {
-    this.nwTopologyService = nwTopologyService;
+  public void setLayerProtocol(List<LayerProtocol> layerProtocol) {
+    this.layerProtocol = layerProtocol;
   }
 
-  public ContextSchema topology(List<Topology> topology) {
-    this.topology = topology;
-    return this;
-  }
-
-  public ContextSchema addTopologyItem(Topology topologyItem) {
-    this.topology.add(topologyItem);
+  public ServiceInterfacePoint direction(DirectionEnum direction) {
+    this.direction = direction;
     return this;
   }
 
    /**
-   * Get topology
-   * @return topology
+   * Get direction
+   * @return direction
   **/
-  @JsonProperty("topology")
+  @JsonProperty("direction")
   @ApiModelProperty(value = "")
-  public List<Topology> getTopology() {
-    return topology;
+  public DirectionEnum getDirection() {
+    return direction;
   }
 
-  public void setTopology(List<Topology> topology) {
-    this.topology = topology;
+  public void setDirection(DirectionEnum direction) {
+    this.direction = direction;
+  }
+
+  public ServiceInterfacePoint state(LifecycleStatePac state) {
+    this.state = state;
+    return this;
+  }
+
+   /**
+   * Get state
+   * @return state
+  **/
+  @JsonProperty("state")
+  @ApiModelProperty(value = "")
+  public LifecycleStatePac getState() {
+    return state;
+  }
+
+  public void setState(LifecycleStatePac state) {
+    this.state = state;
   }
 
 
@@ -193,32 +224,32 @@ public class ContextSchema   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ContextSchema contextSchema = (ContextSchema) o;
-    return Objects.equals(this.label, contextSchema.label) &&
-        Objects.equals(this.uuid, contextSchema.uuid) &&
-        Objects.equals(this.name, contextSchema.name) &&
-        Objects.equals(this.serviceInterfacePoint, contextSchema.serviceInterfacePoint) &&
-        Objects.equals(this.nwTopologyService, contextSchema.nwTopologyService) &&
-        Objects.equals(this.topology, contextSchema.topology);
+    ServiceInterfacePoint serviceInterfacePoint = (ServiceInterfacePoint) o;
+    return Objects.equals(this.label, serviceInterfacePoint.label) &&
+        Objects.equals(this.uuid, serviceInterfacePoint.uuid) &&
+        Objects.equals(this.name, serviceInterfacePoint.name) &&
+        Objects.equals(this.layerProtocol, serviceInterfacePoint.layerProtocol) &&
+        Objects.equals(this.direction, serviceInterfacePoint.direction) &&
+        Objects.equals(this.state, serviceInterfacePoint.state);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, uuid, name, serviceInterfacePoint, nwTopologyService, topology);
+    return Objects.hash(label, uuid, name, layerProtocol, direction, state);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ContextSchema {\n");
+    sb.append("class ServiceInterfacePoint {\n");
     
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    serviceInterfacePoint: ").append(toIndentedString(serviceInterfacePoint)).append("\n");
-    sb.append("    nwTopologyService: ").append(toIndentedString(nwTopologyService)).append("\n");
-    sb.append("    topology: ").append(toIndentedString(topology)).append("\n");
+    sb.append("    layerProtocol: ").append(toIndentedString(layerProtocol)).append("\n");
+    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }

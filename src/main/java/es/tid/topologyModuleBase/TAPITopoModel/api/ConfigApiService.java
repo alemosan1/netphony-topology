@@ -5,29 +5,29 @@ import es.tid.topologyModuleBase.TAPITopoModel.model.*;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
-import es.tid.topologyModuleBase.TAPITopoModel.model.ContextSchema;
-import es.tid.topologyModuleBase.TAPITopoModel.model.NameAndValue;
-import es.tid.topologyModuleBase.TAPITopoModel.model.NetworkTopologyService;
-import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocol;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ServiceEndPoint;
-import es.tid.topologyModuleBase.TAPITopoModel.model.LifecycleStatePac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.Link;
-import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocolTransitionPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.RiskCharacteristic;
-import es.tid.topologyModuleBase.TAPITopoModel.model.RiskParameterPac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.AdminStatePac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.Capacity;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCapacityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ContextSchema;
 import es.tid.topologyModuleBase.TAPITopoModel.model.CostCharacteristic;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCostPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferIntegrityPac;
 import es.tid.topologyModuleBase.TAPITopoModel.model.LatencyCharacteristic;
-import es.tid.topologyModuleBase.TAPITopoModel.model.TransferTimingPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationPac;
-import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationMechanism;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocol;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LayerProtocolTransitionPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.LifecycleStatePac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.Link;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NameAndValue;
+import es.tid.topologyModuleBase.TAPITopoModel.model.NetworkTopologyService;
 import es.tid.topologyModuleBase.TAPITopoModel.model.Node;
 import es.tid.topologyModuleBase.TAPITopoModel.model.NodeEdgePoint;
+import es.tid.topologyModuleBase.TAPITopoModel.model.RiskCharacteristic;
+import es.tid.topologyModuleBase.TAPITopoModel.model.RiskParameterPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ServiceInterfacePoint;
 import es.tid.topologyModuleBase.TAPITopoModel.model.Topology;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCapacityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferCostPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferIntegrityPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.TransferTimingPac;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationMechanism;
+import es.tid.topologyModuleBase.TAPITopoModel.model.ValidationPac;
 
 import java.util.List;
 import es.tid.topologyModuleBase.TAPITopoModel.api.NotFoundException;
@@ -36,8 +36,8 @@ import java.io.InputStream;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-02-10T14:31:20.668+01:00")
+import javax.validation.constraints.*;
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-03-31T10:56:12.255Z")
 public abstract class ConfigApiService {
     public abstract Response createContextById(ContextSchema context,SecurityContext securityContext) throws NotFoundException;
     public abstract Response createContextLabelLabelById(String valueName,NameAndValue label,SecurityContext securityContext) throws NotFoundException;
@@ -55,17 +55,17 @@ public abstract class ConfigApiService {
     public abstract Response retrieveContextNwTopologyServiceNameName(SecurityContext securityContext) throws NotFoundException;
     public abstract Response retrieveContextNwTopologyServiceNameNameById(String valueName,SecurityContext securityContext) throws NotFoundException;
     public abstract Response retrieveContextNwTopologyServiceNwTopologyService(SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointLabelLabel(String uuid,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointLabelLabelById(String uuid,String valueName,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointLayerProtocolLayerProtocol(String uuid,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointLayerProtocolLayerProtocolById(String uuid,String localId,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointLayerProtocolNameName(String uuid,String localId,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointLayerProtocolNameNameById(String uuid,String localId,String valueName,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointNameName(String uuid,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointNameNameById(String uuid,String valueName,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointServiceEndPoint(SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointServiceEndPointById(String uuid,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response retrieveContextServiceEndPointStateState(String uuid,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointLabelLabel(String uuid,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointLabelLabelById(String uuid,String valueName,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocol(String uuid,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocolById(String uuid,String localId,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointLayerProtocolNameName(String uuid,String localId,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointLayerProtocolNameNameById(String uuid,String localId,String valueName,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointNameName(String uuid,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointNameNameById(String uuid,String valueName,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointServiceInterfacePoint(SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointServiceInterfacePointById(String uuid,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response retrieveContextServiceInterfacePointStateState(String uuid,SecurityContext securityContext) throws NotFoundException;
     public abstract Response retrieveContextTopologyLabelLabel(String uuid,SecurityContext securityContext) throws NotFoundException;
     public abstract Response retrieveContextTopologyLabelLabelById(String uuid,String valueName,SecurityContext securityContext) throws NotFoundException;
     public abstract Response retrieveContextTopologyLinkLabelLabel(String uuid,String linkUuid,SecurityContext securityContext) throws NotFoundException;
