@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <managementIP>localhost</managementIP>
-    <managementPort>5001</managementPort>
+    <managementPort>45001</managementPort>
 
-    <XML>
+    <XML_Plugin>
         <mode>TM</mode>
         <XMLFileTopology>target/conf2waysReal/network3.xml</XMLFileTopology>
         <Identifier>172.17.11.203</Identifier>
-    </XML>
+    </XML_Plugin>
      <InitFrom>
         <Init>initFromXML</Init>
     </InitFrom>

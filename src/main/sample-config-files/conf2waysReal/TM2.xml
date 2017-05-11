@@ -3,11 +3,11 @@
     <managementIP>localhost</managementIP>
     <managementPort>5001</managementPort>
 
-    <XML>
+    <XML_Plugin>
         <mode>TM</mode>
         <XMLFileTopology>target/conf2waysReal/network2.xml</XMLFileTopology>
         <Identifier>172.17.11.202</Identifier>
-    </XML>
+    </XML_Plugin>
      <InitFrom>
         <Init>initFromXML</Init>
     </InitFrom>
