@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <managementIP>localhost</managementIP>
-    <managementPort>5001</managementPort>
+    <managementPort>45001</managementPort>
 
     <XML_Plugin>
         <mode>TM</mode>
