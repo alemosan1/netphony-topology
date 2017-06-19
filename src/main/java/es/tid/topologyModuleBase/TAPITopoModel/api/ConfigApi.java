@@ -58,9 +58,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Create context by ID", notes = "Create operation of resource: context", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response createContextById(@ApiParam(value = "contextbody object" ,required=true) ContextSchema context
 ,@Context SecurityContext securityContext)
@@ -72,9 +72,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Create label by ID", notes = "Create operation of resource: label", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response createContextLabelLabelById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@ApiParam(value = "labelbody object" ,required=true) NameAndValue label
@@ -87,9 +87,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Create name by ID", notes = "Create operation of resource: name", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response createContextNameNameById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@ApiParam(value = "namebody object" ,required=true) NameAndValue name
@@ -102,9 +102,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Delete context by ID", notes = "Delete operation of resource: context", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response deleteContextById(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -115,9 +115,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Delete label by ID", notes = "Delete operation of resource: label", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response deleteContextLabelLabelById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
@@ -129,9 +129,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Delete name by ID", notes = "Delete operation of resource: name", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response deleteContextNameNameById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
@@ -143,9 +143,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve context", notes = "Retrieve operation of resource: context", response = ContextSchema.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = ContextSchema.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ContextSchema.class) })
     public Response retrieveContext(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -156,9 +156,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextLabelLabel(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -169,9 +169,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextLabelLabelById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
@@ -183,9 +183,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextNameName(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -196,9 +196,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextNameNameById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
@@ -210,9 +210,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextNwTopologyServiceLabelLabel(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -223,9 +223,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextNwTopologyServiceLabelLabelById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
@@ -237,9 +237,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextNwTopologyServiceNameName(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -250,9 +250,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextNwTopologyServiceNameNameById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@Context SecurityContext securityContext)
@@ -264,9 +264,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve nw-topology-service", notes = "Retrieve operation of resource: nw-topology-service", response = NetworkTopologyService.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NetworkTopologyService.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NetworkTopologyService.class) })
     public Response retrieveContextNwTopologyServiceNwTopologyService(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -277,9 +277,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextServiceInterfacePointLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -291,9 +291,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextServiceInterfacePointLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
@@ -306,9 +306,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve layer-protocol", notes = "Retrieve operation of resource: layer-protocol", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocol(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -320,9 +320,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve layer-protocol by ID", notes = "Retrieve operation of resource: layer-protocol", response = LayerProtocol.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LayerProtocol.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LayerProtocol.class) })
     public Response retrieveContextServiceInterfacePointLayerProtocolLayerProtocolById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of local-id",required=true) @PathParam("local-id") String localId
@@ -335,9 +335,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextServiceInterfacePointLayerProtocolNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of local-id",required=true) @PathParam("local-id") String localId
@@ -350,9 +350,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextServiceInterfacePointLayerProtocolNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of local-id",required=true) @PathParam("local-id") String localId
@@ -366,9 +366,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextServiceInterfacePointNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -380,9 +380,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextServiceInterfacePointNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
@@ -395,9 +395,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve service-interface-point", notes = "Retrieve operation of resource: service-interface-point", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextServiceInterfacePointServiceInterfacePoint(@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -408,9 +408,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve service-interface-point by ID", notes = "Retrieve operation of resource: service-interface-point", response = ServiceInterfacePoint.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = ServiceInterfacePoint.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ServiceInterfacePoint.class) })
     public Response retrieveContextServiceInterfacePointServiceInterfacePointById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -422,9 +422,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve state", notes = "Retrieve operation of resource: state", response = LifecycleStatePac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LifecycleStatePac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LifecycleStatePac.class) })
     public Response retrieveContextServiceInterfacePointStateState(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -436,9 +436,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -450,9 +450,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
@@ -465,9 +465,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -480,9 +480,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyLinkLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -496,9 +496,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve link", notes = "Retrieve operation of resource: link", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkLink(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -510,9 +510,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve link by ID", notes = "Retrieve operation of resource: link", response = Link.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Link.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Link.class) })
     public Response retrieveContextTopologyLinkLinkById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -525,9 +525,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve lp-transition", notes = "Retrieve operation of resource: lp-transition", response = LayerProtocolTransitionPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LayerProtocolTransitionPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LayerProtocolTransitionPac.class) })
     public Response retrieveContextTopologyLinkLpTransitionLpTransition(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -540,9 +540,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -555,9 +555,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyLinkNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -571,9 +571,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve risk-characteristic", notes = "Retrieve operation of resource: risk-characteristic", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkRiskParameterRiskCharacteristicRiskCharacteristic(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -586,9 +586,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve risk-characteristic by ID", notes = "Retrieve operation of resource: risk-characteristic", response = RiskCharacteristic.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = RiskCharacteristic.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = RiskCharacteristic.class) })
     public Response retrieveContextTopologyLinkRiskParameterRiskCharacteristicRiskCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -602,9 +602,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve risk-parameter", notes = "Retrieve operation of resource: risk-parameter", response = RiskParameterPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = RiskParameterPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = RiskParameterPac.class) })
     public Response retrieveContextTopologyLinkRiskParameterRiskParameter(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -617,9 +617,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve state", notes = "Retrieve operation of resource: state", response = AdminStatePac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = AdminStatePac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = AdminStatePac.class) })
     public Response retrieveContextTopologyLinkStateState(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -632,9 +632,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve available-capacity", notes = "Retrieve operation of resource: available-capacity", response = Capacity.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Capacity.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Capacity.class) })
     public Response retrieveContextTopologyLinkTransferCapacityAvailableCapacityAvailableCapacity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -647,9 +647,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve capacity-assigned-to-user-view", notes = "Retrieve operation of resource: capacity-assigned-to-user-view", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkTransferCapacityCapacityAssignedToUserViewCapacityAssignedToUserView(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -662,9 +662,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve capacity-assigned-to-user-view by ID", notes = "Retrieve operation of resource: capacity-assigned-to-user-view", response = Capacity.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Capacity.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Capacity.class) })
     public Response retrieveContextTopologyLinkTransferCapacityCapacityAssignedToUserViewCapacityAssignedToUserViewById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -678,9 +678,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve total-potential-capacity", notes = "Retrieve operation of resource: total-potential-capacity", response = Capacity.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Capacity.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Capacity.class) })
     public Response retrieveContextTopologyLinkTransferCapacityTotalPotentialCapacityTotalPotentialCapacity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -693,9 +693,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-capacity", notes = "Retrieve operation of resource: transfer-capacity", response = TransferCapacityPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferCapacityPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferCapacityPac.class) })
     public Response retrieveContextTopologyLinkTransferCapacityTransferCapacity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -708,9 +708,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve cost-characteristic", notes = "Retrieve operation of resource: cost-characteristic", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkTransferCostCostCharacteristicCostCharacteristic(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -723,9 +723,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve cost-characteristic by ID", notes = "Retrieve operation of resource: cost-characteristic", response = CostCharacteristic.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = CostCharacteristic.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = CostCharacteristic.class) })
     public Response retrieveContextTopologyLinkTransferCostCostCharacteristicCostCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -739,9 +739,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-cost", notes = "Retrieve operation of resource: transfer-cost", response = TransferCostPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferCostPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferCostPac.class) })
     public Response retrieveContextTopologyLinkTransferCostTransferCost(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -754,9 +754,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-integrity", notes = "Retrieve operation of resource: transfer-integrity", response = TransferIntegrityPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferIntegrityPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferIntegrityPac.class) })
     public Response retrieveContextTopologyLinkTransferIntegrityTransferIntegrity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -769,9 +769,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve latency-characteristic", notes = "Retrieve operation of resource: latency-characteristic", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkTransferTimingLatencyCharacteristicLatencyCharacteristic(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -784,9 +784,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve latency-characteristic by ID", notes = "Retrieve operation of resource: latency-characteristic", response = LatencyCharacteristic.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LatencyCharacteristic.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LatencyCharacteristic.class) })
     public Response retrieveContextTopologyLinkTransferTimingLatencyCharacteristicLatencyCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -800,9 +800,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-timing", notes = "Retrieve operation of resource: transfer-timing", response = TransferTimingPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferTimingPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferTimingPac.class) })
     public Response retrieveContextTopologyLinkTransferTimingTransferTiming(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -815,9 +815,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve validation", notes = "Retrieve operation of resource: validation", response = ValidationPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = ValidationPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ValidationPac.class) })
     public Response retrieveContextTopologyLinkValidationValidation(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -830,9 +830,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve validation-mechanism", notes = "Retrieve operation of resource: validation-mechanism", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyLinkValidationValidationMechanismValidationMechanism(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -845,9 +845,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve validation-mechanism by ID", notes = "Retrieve operation of resource: validation-mechanism", response = ValidationMechanism.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = ValidationMechanism.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = ValidationMechanism.class) })
     public Response retrieveContextTopologyLinkValidationValidationMechanismValidationMechanismById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of link_uuid",required=true) @PathParam("link_uuid") String linkUuid
@@ -861,9 +861,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -875,9 +875,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
@@ -890,9 +890,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -905,9 +905,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyNodeLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -921,9 +921,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -936,9 +936,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyNodeNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -952,9 +952,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve node", notes = "Retrieve operation of resource: node", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeNode(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -966,9 +966,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve node by ID", notes = "Retrieve operation of resource: node", response = Node.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Node.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Node.class) })
     public Response retrieveContextTopologyNodeNodeById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -981,9 +981,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label", notes = "Retrieve operation of resource: label", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointLabelLabel(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -997,9 +997,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve label by ID", notes = "Retrieve operation of resource: label", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointLabelLabelById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1014,9 +1014,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve layer-protocol", notes = "Retrieve operation of resource: layer-protocol", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointLayerProtocolLayerProtocol(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1030,9 +1030,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve layer-protocol by ID", notes = "Retrieve operation of resource: layer-protocol", response = LayerProtocol.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LayerProtocol.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LayerProtocol.class) })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointLayerProtocolLayerProtocolById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1047,9 +1047,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointLayerProtocolNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1064,9 +1064,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointLayerProtocolNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1082,9 +1082,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name", notes = "Retrieve operation of resource: name", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointNameName(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1098,9 +1098,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve name by ID", notes = "Retrieve operation of resource: name", response = NameAndValue.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NameAndValue.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NameAndValue.class) })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointNameNameById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1115,9 +1115,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve owned-node-edge-point", notes = "Retrieve operation of resource: owned-node-edge-point", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointOwnedNodeEdgePoint(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1130,9 +1130,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve owned-node-edge-point by ID", notes = "Retrieve operation of resource: owned-node-edge-point", response = NodeEdgePoint.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = NodeEdgePoint.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = NodeEdgePoint.class) })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointOwnedNodeEdgePointById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1146,9 +1146,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve state", notes = "Retrieve operation of resource: state", response = AdminStatePac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = AdminStatePac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = AdminStatePac.class) })
     public Response retrieveContextTopologyNodeOwnedNodeEdgePointStateState(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1162,9 +1162,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve state", notes = "Retrieve operation of resource: state", response = AdminStatePac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = AdminStatePac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = AdminStatePac.class) })
     public Response retrieveContextTopologyNodeStateState(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1177,9 +1177,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve available-capacity", notes = "Retrieve operation of resource: available-capacity", response = Capacity.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Capacity.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Capacity.class) })
     public Response retrieveContextTopologyNodeTransferCapacityAvailableCapacityAvailableCapacity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1192,9 +1192,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve capacity-assigned-to-user-view", notes = "Retrieve operation of resource: capacity-assigned-to-user-view", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeTransferCapacityCapacityAssignedToUserViewCapacityAssignedToUserView(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1207,9 +1207,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve capacity-assigned-to-user-view by ID", notes = "Retrieve operation of resource: capacity-assigned-to-user-view", response = Capacity.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Capacity.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Capacity.class) })
     public Response retrieveContextTopologyNodeTransferCapacityCapacityAssignedToUserViewCapacityAssignedToUserViewById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1223,9 +1223,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve total-potential-capacity", notes = "Retrieve operation of resource: total-potential-capacity", response = Capacity.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Capacity.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Capacity.class) })
     public Response retrieveContextTopologyNodeTransferCapacityTotalPotentialCapacityTotalPotentialCapacity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1238,9 +1238,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-capacity", notes = "Retrieve operation of resource: transfer-capacity", response = TransferCapacityPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferCapacityPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferCapacityPac.class) })
     public Response retrieveContextTopologyNodeTransferCapacityTransferCapacity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1253,9 +1253,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve cost-characteristic", notes = "Retrieve operation of resource: cost-characteristic", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeTransferCostCostCharacteristicCostCharacteristic(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1268,9 +1268,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve cost-characteristic by ID", notes = "Retrieve operation of resource: cost-characteristic", response = CostCharacteristic.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = CostCharacteristic.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = CostCharacteristic.class) })
     public Response retrieveContextTopologyNodeTransferCostCostCharacteristicCostCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1284,9 +1284,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-cost", notes = "Retrieve operation of resource: transfer-cost", response = TransferCostPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferCostPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferCostPac.class) })
     public Response retrieveContextTopologyNodeTransferCostTransferCost(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1299,9 +1299,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-integrity", notes = "Retrieve operation of resource: transfer-integrity", response = TransferIntegrityPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferIntegrityPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferIntegrityPac.class) })
     public Response retrieveContextTopologyNodeTransferIntegrityTransferIntegrity(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1314,9 +1314,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve latency-characteristic", notes = "Retrieve operation of resource: latency-characteristic", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyNodeTransferTimingLatencyCharacteristicLatencyCharacteristic(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1329,9 +1329,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve latency-characteristic by ID", notes = "Retrieve operation of resource: latency-characteristic", response = LatencyCharacteristic.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = LatencyCharacteristic.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = LatencyCharacteristic.class) })
     public Response retrieveContextTopologyNodeTransferTimingLatencyCharacteristicLatencyCharacteristicById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1345,9 +1345,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve transfer-timing", notes = "Retrieve operation of resource: transfer-timing", response = TransferTimingPac.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = TransferTimingPac.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = TransferTimingPac.class) })
     public Response retrieveContextTopologyNodeTransferTimingTransferTiming(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@ApiParam(value = "ID of node_uuid",required=true) @PathParam("node_uuid") String nodeUuid
@@ -1355,27 +1355,28 @@ public class ConfigApi  {
     throws NotFoundException {
         return delegate.retrieveContextTopologyNodeTransferTimingTransferTiming(uuid,nodeUuid,securityContext);
     }
-    @GET
-    @Path("/context/topology/")
+    @POST
+    @Path("/operations/tapi-topology%3Aget-topology-list/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve topology", notes = "Retrieve operation of resource: topology", response = String.class, responseContainer = "List", tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = String.class, responseContainer = "List"),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = String.class, responseContainer = "List") })
     public Response retrieveContextTopologyTopology(@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.retrieveContextTopologyTopology(securityContext);
     }
+
     @GET
     @Path("/context/topology/{uuid}/")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Retrieve topology by ID", notes = "Retrieve operation of resource: topology", response = Topology.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = Topology.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = Topology.class) })
     public Response retrieveContextTopologyTopologyById(@ApiParam(value = "ID of uuid",required=true) @PathParam("uuid") String uuid
 ,@Context SecurityContext securityContext)
@@ -1387,9 +1388,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Update context by ID", notes = "Update operation of resource: context", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response updateContextById(@ApiParam(value = "contextbody object" ,required=true) ContextSchema context
 ,@Context SecurityContext securityContext)
@@ -1401,9 +1402,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Update label by ID", notes = "Update operation of resource: label", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response updateContextLabelLabelById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@ApiParam(value = "labelbody object" ,required=true) NameAndValue label
@@ -1416,9 +1417,9 @@ public class ConfigApi  {
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @io.swagger.annotations.ApiOperation(value = "Update name by ID", notes = "Update operation of resource: name", response = void.class, tags={  })
-    @io.swagger.annotations.ApiResponses(value = { 
+    @io.swagger.annotations.ApiResponses(value = {
         @io.swagger.annotations.ApiResponse(code = 200, message = "Successful operation", response = void.class),
-        
+
         @io.swagger.annotations.ApiResponse(code = 400, message = "Internal Error", response = void.class) })
     public Response updateContextNameNameById(@ApiParam(value = "ID of value-name",required=true) @PathParam("value-name") String valueName
 ,@ApiParam(value = "namebody object" ,required=true) NameAndValue name

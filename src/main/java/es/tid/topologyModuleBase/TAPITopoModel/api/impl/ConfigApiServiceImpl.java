@@ -41,9 +41,32 @@ import java.io.InputStream;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.Produces;
+
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-03-31T10:56:12.255Z")
+@Produces(MediaType.APPLICATION_JSON)
 public class ConfigApiServiceImpl extends ConfigApiService {
     @Override
     public Response createContextById(ContextSchema context, SecurityContext securityContext) throws NotFoundException {
@@ -484,20 +507,21 @@ public class ConfigApiServiceImpl extends ConfigApiService {
     public Response retrieveContextTopologyTopology(SecurityContext securityContext) throws NotFoundException {
     	// do some magic!
     	//XX
-    	System.out.println("por aqui");
+    	System.out.println("port aqui");
     	 TopologiesDataBase ted = TopologyServerTAPI.getActualTed();
     	TopologyContext tc= new TopologyContext();
     	  for(Map.Entry<String, TEDB>entry : ted.getTeds().entrySet() ){
       		 System.out.println("Topologia servida con id: "+entry.getKey());
       		  if (entry.getValue() instanceof DomainTEDB) {
       	    	tc.addTopologyItem(TranslateModel.translateTopology(entry.getKey(), (DomainTEDB)entry.getValue()));
-      	    	
+
       		  }
     	  }
-    	
-    	  return Response.ok().entity(tc).build();
+
+        return Response.ok().entity(tc.getTopology()).build();
         //return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
+
     @Override
     public Response retrieveContextTopologyTopologyById(String uuid, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
