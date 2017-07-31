@@ -9,5 +9,5 @@ sudo java -Dlog4j.configurationFile=target/examples/log4j2.xml  -jar target/topo
 ```
 Make the query
 ```bash
-curl http://localhost:8089/config/context/topology -X GET -i -H "Content-Type: application/json" -H "Accept: application/json"
+curl http://localhost:8089/config/operations/tapi-topology%3Aget-topology-list -X POST -i -H "Content-Type: application/json" -H "Accept: application/json"
 ```
