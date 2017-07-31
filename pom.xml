@@ -394,6 +394,7 @@
 									<goal>shade</goal>
 								</goals>
 								<configuration>
+									<outputFile>${basedir}/target/${project.artifactId}-SNAPSHOT-shaded.jar</outputFile>
 									<shadedArtifactAttached>true</shadedArtifactAttached>
 									<filters>
 										<filter>

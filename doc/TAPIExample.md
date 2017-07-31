@@ -5,7 +5,7 @@
 ```
 Execute the server
 ```bash
-sudo java -Dlog4j.configurationFile=target/examples/log4j2.xml  -jar target/topology-1.3.4-SNAPSHOT-shaded.jar target/TM_TAPI_example1/TMConfTAPI.xml
+sudo java -Dlog4j.configurationFile=target/examples/log4j2.xml  -jar target/topology-SNAPSHOT-shaded.jar target/TM_TAPI_example1/TMConfTAPI.xml
 ```
 Make the query
 ```bash

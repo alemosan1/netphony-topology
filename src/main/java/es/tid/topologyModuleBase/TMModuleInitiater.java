@@ -25,14 +25,14 @@ import es.tid.topologyModuleBase.plugins.writer.TopologyServerTAPI;
 
 public class TMModuleInitiater {
 	Logger log=Logger.getLogger("TMController");
-			
+
 	TopologiesDataBase ted;
 	TopologyModuleParamsArray params;
 	Lock lock;
 	ArrayList<TMPlugin> pluginsList;
 
 	private ScheduledThreadPoolExecutor executor;
-	
+
 	public TMModuleInitiater(TopologiesDataBase ted, TopologyModuleParamsArray params, Lock lock, ArrayList<TMPlugin> pluginsList)
 	{
 		this.ted = ted;
@@ -48,7 +48,7 @@ public class TMModuleInitiater {
 		{
 			TopologyModuleParams actualLittleParams = paramList.get(i);
 			//IMPORTERS
-			
+
 			if (actualLittleParams.isCOPReading())
 			{
 				TMPlugin p = new TopologyReaderCOP(ted, actualLittleParams,lock);
@@ -62,33 +62,33 @@ public class TMModuleInitiater {
 				pluginsList.add(p);
 				//log.info("topology readed from file. State:\n"+ted.printTopology());
 			}
-			
-			
+
+
 			if (actualLittleParams.isOSPF())
 			{
 				TMPlugin p = new TopologyReaderOSPF(ted, actualLittleParams, lock);
 				executor.execute(p);
 				pluginsList.add(p);
 			}
-			
+
 			/*if (actualLittleParams.isFloodLight())
 			{
 				(new TopologyReaderController(ted, actualLittleParams, lock)).readTopology();
 			}
-			
+
 			if (actualLittleParams.isRestInfinera())
 			{
 				(new TopologyReaderInfinera(ted, actualLittleParams,lock)).readTopology();
 			}*/
-			
+
 			if (actualLittleParams.isBGPLSReading())
 			{
 				TMPlugin p = new TopologyReaderBGPLS(ted, actualLittleParams,lock);
 				executor.execute(p);
 				pluginsList.add(p);
 			}
-			
-			
+
+
 			//EXPORTERS
 			if (actualLittleParams.isBGPLSWriting())
 			{
@@ -97,7 +97,7 @@ public class TMModuleInitiater {
 				executor.execute(p);
 				pluginsList.add(p);
 			}
-			
+
 			if (actualLittleParams.isGSON())
 			{
 				TMPlugin p = new TopologyServerGson(ted, actualLittleParams,lock);
@@ -123,7 +123,7 @@ public class TMModuleInitiater {
 				executor.execute(p);
 				pluginsList.add(p);
 			}
-			
+
 			if (actualLittleParams.isIETFWritting())
 			{
 				TMPlugin p = new TopologyServerIETF(ted, actualLittleParams,lock);
@@ -145,8 +145,8 @@ public class TMModuleInitiater {
 			} else {
                             System.out.println("VALOR DEL FLAG: " + actualLittleParams.isTAPIWriting());
                         }
-                        
-                        
+
+
 			// IMPORTER/EXPORTER
 			if (actualLittleParams.isBGPLSReadingWriting())
 			{
@@ -173,9 +173,9 @@ public class TMModuleInitiater {
 			}
 			*/
 		}
-		
-		
-		
+
+
+
 	}
 
 }
